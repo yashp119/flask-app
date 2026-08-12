@@ -44,7 +44,7 @@ jobs:
     runs-on: ubuntu-latest
     needs: [test, security-scan]
     # Only push on an actual merge/commit to main — PRs still run test+scan above
-    if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+    if: github.event_name == 'push' && github.ref == 'refs/heads/master'
     steps:
       - uses: actions/checkout@v4
 
